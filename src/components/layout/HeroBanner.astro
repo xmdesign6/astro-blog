@@ -1,0 +1,23 @@
+---
+import { siteConfig } from "@/config";
+import { url } from "@/utils/url-utils";
+
+const title = siteConfig.title;
+const subtitle = siteConfig.subtitle;
+const searchUrl = url("/search");
+---
+
+<section class="xrbk-hero onload-animation" aria-label="站点介绍与搜索">
+  <h1 class="xrbk-hero__title">{title}</h1>
+  <p class="xrbk-hero__subtitle">{subtitle}</p>
+  <form class="xrbk-hero__search" action={searchUrl} method="get" role="search">
+    <input
+      type="text"
+      name="q"
+      placeholder="搜索文章、标签、分类…"
+      aria-label="搜索"
+      autocomplete="off"
+    />
+    <button type="submit">搜索</button>
+  </form>
+</section>
